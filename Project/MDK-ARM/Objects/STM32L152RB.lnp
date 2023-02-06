@@ -1,0 +1,15 @@
+--cpu Cortex-M3
+".\objects\system_stm32l1xx.o"
+".\objects\startup_stm32l152xb.o"
+".\objects\main.o"
+".\objects\stm32l1xx_ll_lcd.o"
+".\objects\stm32l152_glass_lcd.o"
+".\objects\stm32l1xx_ll_pwr.o"
+".\objects\stm32l1xx_ll_rcc.o"
+".\objects\stm32l1xx_ll_utils.o"
+".\objects\stm32l1xx_ll_gpio.o"
+".\objects\stm32l1xx_ll_spi.o"
+".\objects\rc522.o"
+--ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\STM32L152RB.map" -o .\Objects\STM32L152RB.axf

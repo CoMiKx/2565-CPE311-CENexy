@@ -1,0 +1,14 @@
+.\objects\mfrc522.o: ..\..\Drivers\STM32L1xx_HAL_Driver\Src\MFRC522.c
+.\objects\mfrc522.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\mfrc522.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\mfrc522.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\mfrc522.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\objects\mfrc522.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\mfrc522.o: ..\..\Drivers\CMSIS\Device\ST\STM32L1xx\Include\stm32l1xx.h
+.\objects\mfrc522.o: ..\..\Drivers\CMSIS\Device\ST\STM32L1xx\Include\stm32l152xb.h
+.\objects\mfrc522.o: ..\..\Drivers\CMSIS\Include\core_cm3.h
+.\objects\mfrc522.o: ..\..\Drivers\CMSIS\Include\core_cmInstr.h
+.\objects\mfrc522.o: ..\..\Drivers\CMSIS\Include\cmsis_armcc.h
+.\objects\mfrc522.o: ..\..\Drivers\CMSIS\Include\core_cmFunc.h
+.\objects\mfrc522.o: ..\..\Drivers\CMSIS\Device\ST\STM32L1xx\Include\system_stm32l1xx.h
+.\objects\mfrc522.o: ..\..\Drivers\STM32L1xx_HAL_Driver\Inc\MFRC522.h
