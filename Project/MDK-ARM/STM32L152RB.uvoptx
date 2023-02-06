@@ -185,17 +185,17 @@
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>blockNum,0x0A</ItemText>
+          <ItemText>status,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>blockData,0x0A</ItemText>
+          <ItemText>data</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>readBlockData</ItemText>
+          <ItemText>data2[j*4]</ItemText>
         </Ww>
       </WatchWindow1>
       <MemoryWindow1>

@@ -1,11 +1,3 @@
-#include "stm32l1xx.h"
-#include "stm32l1xx_ll_system.h"
-#include "stm32l1xx_ll_bus.h"
-#include "stm32l1xx_ll_gpio.h"
-#include "stm32l1xx_ll_pwr.h"
-#include "stm32l1xx_ll_rcc.h"
-#include "stm32l1xx_ll_utils.h"
-#include "stm32l1xx_ll_spi.h"
 #include "RC522.h"
 
 
@@ -38,10 +30,10 @@ int main(void)
 		status=select_card(PICC_ANTICOLL1, PICC_ARG_SELECT, data);
 		status=read_UID(PICC_ANTICOLL2, PICC_ARG_UID, data);
 		status=select_card(PICC_ANTICOLL2, PICC_ARG_SELECT, data);
-		for (i=0; i<4 && read_page(i*4, data)==OK; i++)
+		for (i=0; i<4; i++)
 		{
-//			status=read_page(i*4, data);
-//			if (status==ERR){break;}
+			status=read_page(i*4, data);
+			if (status==ERR){break;}
 			for (j=0; j<4; j++)
 			{
 				data2[j*4] = data[j*4];

@@ -28,7 +28,7 @@ void init_SPI_RC522()
   RC522_PIN_clr(RC522_SCK);
 }
 
-uint8_t trans_SPI_RC522 (uint8_t DataIN)
+uint8_t trans_SPI_RC522(uint8_t DataIN)
 {
   uint8_t DataOUT=0;
   for (uint8_t i=8; i>0; i--)
@@ -36,20 +36,20 @@ uint8_t trans_SPI_RC522 (uint8_t DataIN)
     //volatile uint8_t DelaySPI=5;
     //while(DelaySPI--);
     if (DataIN&0x80) 
-      RC522_PIN_set (RC522_MOSI);
+      RC522_PIN_set(RC522_MOSI);
     else
-      RC522_PIN_clr (RC522_MOSI);
+      RC522_PIN_clr(RC522_MOSI);
     DataIN<<=1;
-    RC522_PIN_set (RC522_SCK);
+    RC522_PIN_set(RC522_SCK);
     DataOUT<<=1;
     if (RC522_PIN_MISO) 
       DataOUT|=1; 
-    RC522_PIN_clr (RC522_SCK);
+    RC522_PIN_clr(RC522_SCK);
   }
   return DataOUT;
 }
 
-void Write_Reg_RC522 (uint8_t Address, uint8_t Data)
+void Write_Reg_RC522(uint8_t Address, uint8_t Data)
 {
   RC522_PIN_clr (RC522_SCK);
   RC522_PIN_clr (RC522_SS);
@@ -62,12 +62,12 @@ void Write_Reg_RC522 (uint8_t Address, uint8_t Data)
 uint8_t Read_Reg_RC522 (uint8_t Address)
 {
   uint8_t Data;
-  RC522_PIN_clr (RC522_SCK);
-  RC522_PIN_clr (RC522_SS);
+  RC522_PIN_clr(RC522_SCK);
+  RC522_PIN_clr(RC522_SS);
   Address=(Address<<1)|(1<<7);
   trans_SPI_RC522(Address);
   Data=trans_SPI_RC522(0);
-  RC522_PIN_set (RC522_SS);
+  RC522_PIN_set(RC522_SS);
   return Data;
 }
 

@@ -1,4 +1,5 @@
 .\objects\main.o: ..\src\main.c
+.\objects\main.o: ..\..\Drivers\STM32L1xx_HAL_Driver\Inc\RC522.h
 .\objects\main.o: ..\..\Drivers\CMSIS\Device\ST\STM32L1xx\Include\stm32l1xx.h
 .\objects\main.o: ..\..\Drivers\CMSIS\Device\ST\STM32L1xx\Include\stm32l152xb.h
 .\objects\main.o: ..\..\Drivers\CMSIS\Include\core_cm3.h
@@ -14,4 +15,3 @@
 .\objects\main.o: ..\..\Drivers\STM32L1xx_HAL_Driver\Inc\stm32l1xx_ll_rcc.h
 .\objects\main.o: ..\..\Drivers\STM32L1xx_HAL_Driver\Inc\stm32l1xx_ll_utils.h
 .\objects\main.o: ..\..\Drivers\STM32L1xx_HAL_Driver\Inc\stm32l1xx_ll_spi.h
-.\objects\main.o: ..\..\Drivers\STM32L1xx_HAL_Driver\Inc\RC522.h

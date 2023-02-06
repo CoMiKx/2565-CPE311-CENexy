@@ -145,7 +145,7 @@ MFRC522
 #define     RFU3C                 0x3C
 #define     RFU3D                 0x3D
 #define     RFU3E                 0x3E
-#define     RFU3F		  0x3F
+#define     RFU3F		  						0x3F
 
 
 #define OK 1
