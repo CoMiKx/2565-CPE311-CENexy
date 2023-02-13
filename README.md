@@ -17,13 +17,12 @@ The project is written in C and compiled using Keil uVision 5.
 * Keil uVision 5 for writing and compiling the code
 
 ### Connections
-* Connect the SDA pin of the RC522 module to PB7 of the STM32L152RB
-* Connect the SCK pin of the RC522 module to PB6 of the STM32L152RB
-* Connect the MOSI pin of the RC522 module to PB5 of the STM32L152RB
-* Connect the MISO pin of the RC522 module to PB4 of the STM32L152RB
-* Connect the IRQ pin of the RC522 module to PB3 of the STM32L152RB
+* Connect the MISO pin of the RC522 module to PB3 of the STM32L152RB
+* Connect the SCK pin of the RC522 module to PB4 of the STM32L152RB
+* Connect the SDA pin of the RC522 module to PB5 of the STM32L152RB
+* Connect the MOSI pin of the RC522 module to PB6 of the STM32L152RB
+* Connect the RST pin of the RC522 module to PB7 of the STM32L152RB
 * Connect the GND pin of the RC522 module to GND of the STM32L152RB
-* Connect the RST pin of the RC522 module to PB2 of the STM32L152RB
 * Connect the 3.3V pin of the RC522 module to 3.3V of the STM32L152RB
 * Connect the LED YELLOW to PC1 of the STM32L152RB
 * Connect the LED RED to PC2 of the STM32L152RB
