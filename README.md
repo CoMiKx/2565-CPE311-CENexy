@@ -25,6 +25,8 @@ The project is written in C and compiled using Keil uVision 5.
 * Connect the GND pin of the RC522 module to GND of the STM32L152RB
 * Connect the RST pin of the RC522 module to PB2 of the STM32L152RB
 * Connect the 3.3V pin of the RC522 module to 3.3V of the STM32L152RB
+* Connect the LED YELLOW to PC1 of the STM32L152RB
+* Connect the LED RED to PC2 of the STM32L152RB
 
 ### Usage
 1. Open the project in Keil uVision 5 and build the code.
@@ -55,6 +57,12 @@ The project is written in C and compiled using Keil uVision 5.
 ## Gantt chart
   ![chart](https://i.imgur.com/Ra7kCo7.png)
   [Full Gantt Chart here open with file .gantt in project.](https://www.onlinegantt.com/#/gantt)
+
+## Waterfall Model
+  ![model](https://github.com/CoMiKx/2565-CPE311-CENexy/blob/master/model.png?raw=true)
+
+## Flow Chart
+  ![flowchart](https://github.com/CoMiKx/2565-CPE311-CENexy/blob/master/flowchart.png?raw=true)
  
 ## Conclusion
   This project provides a basic framework for utilizing the RC522 RFID reader and writer module 
