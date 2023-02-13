@@ -27,7 +27,10 @@ The project is written in C and compiled using Keil uVision 5.
 * Connect the LED YELLOW to PC1 of the STM32L152RB
 * Connect the LED RED to PC2 of the STM32L152RB
 
-### Usage
+## Pin Allocation
+  ![Pin Allocation](https://github.com/CoMiKx/2565-CPE311-CENexy/blob/master/pin_allocation.jpg?raw=true)
+
+## Usage
 1. Open the project in Keil uVision 5 and build the code.
 2. Flash the code to the STM32L152RB microcontroller.
 3. Place an RFID card on the RC522 module to read the data from the card.
