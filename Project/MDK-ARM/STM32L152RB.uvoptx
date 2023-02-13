@@ -197,6 +197,11 @@
           <WinNumber>1</WinNumber>
           <ItemText>data2[j*4]</ItemText>
         </Ww>
+        <Ww>
+          <count>6</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>result,0x0A</ItemText>
+        </Ww>
       </WatchWindow1>
       <MemoryWindow1>
         <Mm>

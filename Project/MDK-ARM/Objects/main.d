@@ -15,3 +15,5 @@
 .\objects\main.o: ..\..\Drivers\STM32L1xx_HAL_Driver\Inc\stm32l1xx_ll_rcc.h
 .\objects\main.o: ..\..\Drivers\STM32L1xx_HAL_Driver\Inc\stm32l1xx_ll_utils.h
 .\objects\main.o: ..\..\Drivers\STM32L1xx_HAL_Driver\Inc\stm32l1xx_ll_spi.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

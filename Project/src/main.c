@@ -1,20 +1,11 @@
 #include "RC522.h"
+#include "string.h"
+#include <stdio.h>
 
-
-/* Default key for authentication */
-const uint8_t defaultKey[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
-/* Block number to write and read data */
-const uint8_t blockNum = 2;
-/* Buffer to store data to be written to the block */
-uint8_t blockData[16] = {"TEST_DATA"};
-/* Buffer to store data read from the block */
-uint8_t readBlockData[18];
-uint8_t status, i, j;
-uint8_t data[18], data2[100];
+uint8_t status;
+uint8_t data[18];
 
 void SystemClock_Config(void);
-void WriteDataToBlock(uint8_t blockNum, uint8_t blockData[]);
-void ReadDataFromBlock(uint8_t blockNum, uint8_t readBlockData[]);
 
 int main(void)
 {
@@ -23,68 +14,16 @@ int main(void)
 	while(1)
 	{
 		/*Request Answer (REQA, 0x26)*/
-		while (request_card(PICC_REQALL, data)==ERR){};
-		/*Wake-Up command (WUPA, 0x52)*/
+		while (request_card(PICC_REQALL, data)==ERR){LL_GPIO_ResetOutputPin(GPIOC, LL_GPIO_PIN_1 | LL_GPIO_PIN_2);}
+		/*Wake-Up command (WUPA, 0x52)
 		while (request_card(PICC_REQIDL, data)==ERR){};
-		status=read_UID(PICC_ANTICOLL1, PICC_ARG_UID, data);
 		status=select_card(PICC_ANTICOLL1, PICC_ARG_SELECT, data);
 		status=read_UID(PICC_ANTICOLL2, PICC_ARG_UID, data);
-		status=select_card(PICC_ANTICOLL2, PICC_ARG_SELECT, data);
-		for (i=0; i<4; i++)
-		{
-			status=read_page(i*4, data);
-			if (status==ERR){break;}
-			for (j=0; j<4; j++)
-			{
-				data2[j*4] = data[j*4];
-			}
-		}
+		status=select_card(PICC_ANTICOLL2, PICC_ARG_SELECT, data);*/
+		status=read_UID(PICC_ANTICOLL1, PICC_ARG_UID, data);
+		data[1] == '&' ? LL_GPIO_SetOutputPin(GPIOC, LL_GPIO_PIN_1) : LL_GPIO_SetOutputPin(GPIOC, LL_GPIO_PIN_2);
+		//sprintf((char*)data, "");
 	}
-}
-
-void WriteDataToBlock(uint8_t blockNum, uint8_t blockData[])
-{
-	/* Set SS (PB10) pin low to select the RC522 module */
-	LL_GPIO_ResetOutputPin(GPIOB, LL_GPIO_PIN_10);
-	/* Send the authentication command */
-	LL_SPI_TransmitData8(SPI2, 0x0A);
-	/* Send the block number */
-	LL_SPI_TransmitData8(SPI2, blockNum);
-	/* Send the default key */
-	for(int i = 0; i < 6; i++)
-	{
-			LL_SPI_TransmitData8(SPI2, defaultKey[i]);
-	}
-	/* Send the data to be written */
-	for(int i = 0; i < 16; i++)
-	{
-			LL_SPI_TransmitData8(SPI2, blockData[i]);
-	}
-	/* Wait until the transmission is complete */
-	while(!LL_SPI_IsActiveFlag_TXE(SPI2));
-	/* Set SS (PB10) pin high to deselect the RC522 module */
-	LL_GPIO_SetOutputPin(GPIOB, LL_GPIO_PIN_10);
-}
-
-void ReadDataFromBlock(uint8_t blockNum, uint8_t readBlockData[])
-{
-	/* Set SS (PB10) pin low to select the RC522 module */
-	LL_GPIO_ResetOutputPin(GPIOB, LL_GPIO_PIN_10);
-	/* Send the read command */
-	LL_SPI_TransmitData8(SPI2, 0x03);
-	/* Send the block number */
-	LL_SPI_TransmitData8(SPI2, blockNum);
-	/* Send the buffer length */
-	LL_SPI_TransmitData8(SPI2, 18);
-	/* Receive the data from the block */
-	for(int i = 0; i < 18; i++)
-	{
-			readBlockData[i] = LL_SPI_ReceiveData8(SPI2);
-	}
-	/* Wait until the transmission is complete */
-	while(!LL_SPI_IsActiveFlag_RXNE(SPI2));
-	/* Set SS (PB10) pin high to deselect the RC522 module */
-	LL_GPIO_SetOutputPin(GPIOB, LL_GPIO_PIN_10);
 }
 
 void SystemClock_Config(void)

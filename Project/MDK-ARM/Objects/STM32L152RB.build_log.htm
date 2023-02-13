@@ -27,7 +27,17 @@ Project File Date:  01/31/2023
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Demonstrate'
-".\Objects\STM32L152RB.axf" - 0 Error(s), 0 Warning(s).
+compiling main.c...
+..\..\Drivers\STM32L1xx_HAL_Driver\Inc\RC522.h(41): warning:  #1295-D: Deprecated declaration halt - give arg types
+  uint8_t halt();
+..\..\Drivers\STM32L1xx_HAL_Driver\Inc\RC522.h(46): warning:  #1295-D: Deprecated declaration init_RC522 - give arg types
+  void init_RC522();
+..\..\Drivers\STM32L1xx_HAL_Driver\Inc\RC522.h(47): warning:  #1295-D: Deprecated declaration init_SPI_RC522 - give arg types
+  void init_SPI_RC522();
+..\src\main.c: 3 warnings, 0 errors
+linking...
+Program Size: Code=2112 RO-data=276 RW-data=8 ZI-data=1656  
+".\Objects\STM32L152RB.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -40,7 +50,7 @@ Package Vendor: Keil
   C:\Users\Baramee\AppData\Local\Arm\Packs\Keil\STM32L1xx_DFP\1.4.1\Drivers\CMSIS\Device\ST\STM32L1xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>
