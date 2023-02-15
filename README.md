@@ -4,7 +4,7 @@ This project utilizes the RC522 RFID reader and writer module in conjunction wit
 STM32L152RB microcontroller to read and write data to RFID cards. 
 The project is written in C and compiled using Keil uVision 5.
 
-### [CODE HERE!](https://github.com/CoMiKx/2565-CPE311-CENexy/blob/master/Project/src/main.c) & [LIBRARY HERE!](https://github.com/CoMiKx/2565-CPE311-CENexy/blob/master/Drivers/STM32L1xx_HAL_Driver/Src/RC522.c)
+### [CODE HERE!](https://github.com/CoMiKx/2565-CPE311-CENexy/blob/master/Project/src/main.c) & [LIBRARY HERE!](https://github.com/CoMiKx/2565-CPE311-CENexy/blob/master/Drivers/STM32L1xx_HAL_Driver/Src/RC522.c) & [PRESENTATION HERE!](https://docs.google.com/presentation/d/16csGsexSO30KTm1xTkd-oD_B9c8NTV0xzqpJKavO2YQ/edit?usp=sharing)
 
 ## Getting Started
 ### Hardware
